@@ -1,0 +1,43 @@
+.skeleton {
+    margin: 10px 0px;
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+  
+  @keyframes skeleton-loading {
+    0% {
+      background-color: hsl(0, 0%, 87%);
+    }
+    100% {
+      background-color: hsl(0, 0%, 95%);
+    }
+  }
+.skeleton-title {
+    height: 20px;
+    width: 50%;
+    margin-bottom: 15px;
+}
+
+.skeleton-text {
+    width: 100%;
+    height: 15px;
+}
+.skeleton-avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.skeleton-thumbnail{
+    width: 100%;
+    height: 150px;
+    margin: 25px 0px;
+}
+.skeleton-wrapper{
+    margin: 20px auto;
+}
+.skeleton-profile{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    align-items: center;
+}

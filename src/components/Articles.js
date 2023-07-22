@@ -1,0 +1,31 @@
+import React, { useEffect, useState } from "react";
+import { SkeletonArticle } from "./skeleton/SkeletonArticle";
+
+export const Articles = () => {
+  const [articles, setArticles] = useState();
+  useEffect(() => {
+    setTimeout(async () => {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      const data = await response.json();
+      setArticles(data);
+    }, 5000);
+  }, []);
+  return (
+    <div className="articles">
+      <h2>Articles</h2>
+      {articles &&
+        articles.map((article) => {
+          return (
+            <div className="article" key={article.id}>
+              <h3>{article.title}</h3>
+              <p>{article.body}</p>
+            </div>
+          );
+        })}
+      {!articles &&
+        [1, 2, 3, 4, 5].map((_item) => <SkeletonArticle key={_item} />)}
+    </div>
+  );
+};
