@@ -3,6 +3,8 @@ import { SkeletonArticle } from "./skeleton/SkeletonArticle";
 
 export const Articles = () => {
   const [articles, setArticles] = useState();
+  
+  //fetch articles 
   useEffect(() => {
     setTimeout(async () => {
       const response = await fetch(
